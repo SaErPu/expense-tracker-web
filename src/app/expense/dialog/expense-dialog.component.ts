@@ -97,7 +97,7 @@ export class ExpenseDialogComponent implements OnInit {
   form!: FormGroup;
 
   constructor(
-    private fb: FormBuilder,
+    private readonly fb: FormBuilder,
     public dialogRef: MatDialogRef<ExpenseDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: { expense: Expense | null }
   ) {
@@ -122,7 +122,7 @@ export class ExpenseDialogComponent implements OnInit {
       const expense: Expense = {
         id: this.data.expense?.id,
         description: value.description!,
-        amount: Number(value.amount!),
+        amount: Number(value.amount),
         date: value.date!.toISOString().split('T')[0],
         category: value.category!
       };

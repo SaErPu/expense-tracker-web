@@ -82,7 +82,7 @@ export class ExpenseComponent implements OnInit {
   totalAmount = 0;
 
   constructor(
-    private expenseService: ExpenseService,
+    private readonly expenseService: ExpenseService,
     private dialog: MatDialog,
     private snackBar: MatSnackBar
   ) {

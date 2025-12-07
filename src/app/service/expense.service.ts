@@ -24,9 +24,9 @@ import {Injectable} from '@angular/core';
 
 @Injectable({providedIn: 'root'})
 export class ExpenseService {
-  private apiUrl = 'http://localhost:8080/api/expenses';
+  private readonly apiUrl = 'http://localhost:8080/api/expenses';
 
-  constructor(private http: HttpClient) {
+  constructor(private readonly http: HttpClient) {
   }
 
   getAll(): Observable<Expense[]> {
